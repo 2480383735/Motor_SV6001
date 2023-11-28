@@ -1,12 +1,12 @@
-/**
- ***************************************(C) COPYRIGHT 2018 DJI***************************************
- * @file       bsp_uart.c
- * @brief      this file contains rc data receive and processing function
- * @note       
- * @Version    V1.0.0
- * @Date       Jan-30-2018
- ***************************************(C) COPYRIGHT 2018 DJI***************************************
+/*
+ * @Author: Yangyujian 2480383735@qq.com
+ * @Date: 2023-11-22 09:37:02
+ * @LastEditors: Yangyujian 2480383735@qq.com
+ * @LastEditTime: 2023-11-27 08:54:17
+ * @FilePath: \Motor_SV6001\Drivers\DBUS\bsp_uart.c
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+
                                                                                                               
 #include "string.h"
 #include "stdlib.h"
@@ -111,17 +111,6 @@ void rc_callback_handler(rc_info_t *rc, uint8_t *buff)
 	rc->ch5 = (((buff[6]&0xf0)>>4))|(((buff[7]&0x7f))<<4); 
 	rc->flag=buff[23]; 
 	rc->ender=buff[24];
-  
-   // SV601_run(&hcan1, 0x05, rc->ch4 * 3, 100);
-
-	
-	//if(rc->ch4 > 20000)
-	//vel = ((float)(rc->ch3))/ 17.4;
-	//if(pos > 3.14) pos = 3.14;
-//	if(pos < -3.14) pos = -3.14;
-//if(rc->ch4 < -700 || rc->ch4 > 700)
-	//ctrl_motor2(&hcan1, 0x101, pos, 5);
-
 }
 
 /**

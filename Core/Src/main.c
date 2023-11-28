@@ -1,21 +1,12 @@
 /* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
+/*
+ * @Author: Yangyujian 2480383735@qq.com
+ * @Date: 2023-11-23 09:19:03
+ * @LastEditors: Yangyujian 2480383735@qq.com
+ * @LastEditTime: 2023-11-25 18:47:51
+ * @FilePath: \Motor_SV6001\Core\Src\main.c
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -26,9 +17,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include  "motor.h"
-#include "bsp_uart.h"
-#include "bsp_can.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

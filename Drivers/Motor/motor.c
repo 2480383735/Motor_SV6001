@@ -159,6 +159,14 @@ void new_cal_turn_left_right_deal(float Angle, float V, float *left_servo_angle,
  * angle_1:当前车辆偏转角度
  * angle_2:车辆目标偏转角度
 ****************************/
+/**
+ * @description: 
+ * @param {float} *angle_1
+ * @param {float} angle_2
+ * @param {float} *vel_1
+ * @param {float} vel_2
+ * @return {*}
+ */
 void  carAngleChanges(float *angle_1, float angle_2, float *vel_1, float vel_2)
 {
 	//获取当前车辆的实际角度

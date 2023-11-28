@@ -2,7 +2,7 @@
  * @Author: Yangyujian 2480383735@qq.com
  * @Date: 2023-11-22 18:37:35
  * @LastEditors: Yangyujian 2480383735@qq.com
- * @LastEditTime: 2023-11-25 17:28:40
+ * @LastEditTime: 2023-11-25 18:34:26
  * @FilePath: \Motor_SV6001\Drivers\Motor\bsp_can.c
  * @Description: 
  */
@@ -31,6 +31,25 @@ uint16_t				left_servo_send_angle, right_servo_send_angle;				//下发角度
 int16_t					left_servo_difference_angle, right_servo_difference_angle;	//反馈角度与下发角度的差值
 uint16_t				servo_allowable_error, servo_adjust_value;
 float					servo_error_scale;
+
+
+void CanFeedback_Init(void)
+{
+	CAN_FilterTypeDef sFilterConfig;
+
+  	sFilterConfig.FilterBank = 0;
+ 	sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
+  	sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
+ 	sFilterConfig.FilterIdHigh = 0x0000;
+ 	sFilterConfig.FilterIdLow = 0x0000;
+  	sFilterConfig.FilterMaskIdHigh = 0x0000;
+  	sFilterConfig.FilterMaskIdLow = 0x0000;
+  	sFilterConfig.FilterFIFOAssignment = CAN_RX_FIFO0;
+  	sFilterConfig.FilterActivation = ENABLE;
+  	sFilterConfig.SlaveStartFilterBank = 14;
+  	HAL_CAN_ConfigFilter(&hcan1, &sFilterConfig);
+}
+
  /**
   * @name			HAL_CAN_RxFifo0MsgPendingCallback
   * @brief			Rx Fifo 0 message pending callback in non blocking mode
